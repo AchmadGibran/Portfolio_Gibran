@@ -1,55 +1,56 @@
-# Portofolio Next.js
+<div align="center">
 
-Next.js 14 (App Router), React 18, Tailwind CSS 3, dan Lucide Icons.
+# Portfolio & Digital Workspace
 
-## Menjalankan
-1. Pasang Node.js 18.17 atau lebih baru.
-2. Jalankan `npm install`, lalu `npm run dev`.
-3. Buka http://localhost:3000.
+**Achmad Gibran** — Web Developer & IT Student at STITEK Bontang  
+*Elegance in Engineering, Precision in Design.*
 
-## Hosting
-- Vercel: upload project ke GitHub, lalu import di vercel.com. Tidak perlu pengaturan tambahan.
-- Hosting statis: aktifkan `output: "export"` di next.config.mjs, jalankan `npm run build`, lalu upload folder `out`.
+<br>
 
-## Struktur
-```
+<img src="./public/foto/Tampilan.png" alt="Preview Web Portofolio Achmad Gibran" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+
+<br>
+
+[![Next.js](https://img.shields.io/badge/Next.js_14-black?style=flat-square&logo=next.js&logoColor=white)](https://next.js.org/)
+[![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Status](https://img.shields.io/badge/Status-Active_Production-emerald?style=flat-square)](https://github.com/AchmadGibran/personal-notes-app)
+
+</div>
+
+---
+
+## ⚡ Arsitektur & Filosofi Desain
+
+Repositori ini adalah rumah bagi portofolio profesional pribadi yang dirancang dengan standar performa dan estetika tinggi. Menggunakan arsitektur modern berbasis **Next.js 14 App Router**, situs ini memisahkan secara ketat antara logika server dan interaktivitas klien (`"use client"`), memastikan pemuatan halaman yang instan (*blazing fast*) serta SEO yang optimal.
+
+### Karakteristik Utama:
+* **Immersive Aesthetics:** Mengusung tema *dark mode* elegan dengan sentuhan efek *Aurora background*, kursor interaktif (*Cursor Aura*), dan transisi tema melingkar yang halus tanpa mengorbankan aksesibilitas (`prefers-reduced-motion` didukung penuh).
+* **Modular Data-Driven:** Seluruh konten (mulai dari profil, kredensial, *tech stack*, hingga proyek) terisolasi rapi di dalam direktori `src/data/`, memudahkan pemeliharaan konten tanpa menyentuh komponen UI.
+* **Interactive Showcase:** Menampilkan filter proyek interaktif yang membedakan secara jelas antara *Web Development/Backend* dan *UI/UX & Prototype*.
+
+---
+
+## 📂 Struktur Direktori Proyek
+
+```text
 src/
-  app/
-    layout.jsx          font, metadata (judul tab, deskripsi), provider
-    page.jsx            merakit semua section
-    globals.css         Tailwind dan animasi
-  data/                 semua isi konten (edit di sini)
-    profile.js  navigation.js  credentials.js  stack.js
-    projects.js  highlights.js  socials.js
-  sections/             Hero  Education  TechStack  Projects  Highlights  Contact
-  components/
-    TShape.jsx          potret animasi + bentuk T di hero
-    layout/             FloatingNav, Footer
-    layout/             FloatingNav, Footer
-    ui/                 Glow, Chip, Section, ImageSlot, CertFrame, LinkBtn, Lightbox,
-                        Reveal, Typewriter, ThemeToggle, CursorAura, AuroraBackground
-  lib/theme.js          fungsi ganti tema
-public/                 foto/, sertifikat/
-```
-
-File yang diawali "use client" membutuhkan interaksi di browser (hover, state, audio, form).
-Sisanya dirender di server.
-
-## Fitur tampilan
-- Mode terang/gelap: tombol di navbar, tersimpan di browser, bawaan gelap. Transisi berupa lingkaran yang mengembang dari tombol.
-- Aurora latar, cahaya mengikuti kursor, reveal saat scroll, teks terminal yang diketik, filter proyek (dibagi kelompok Coding dan UI/UX).
-- Semua animasi mati otomatis bila perangkat memilih "reduce motion".
-
-## Yang perlu diisi
-- `src/data/projects.js`:
-  - `github` untuk OpenJob (belum ada)
-- `public/projects/openjob-postman.png`: screenshot hasil run Postman collection
-
-## Aset (taruh di folder public)
-- projects/openjob-postman.png (bukti Postman)
-- foto/Gibranfoto.jpeg (ganti nama file di `src/data/profile.js` bila memakai foto baru; atur `photoTone` di file yang sama)
-- sertifikat/dicoding.jpg, sertifikat/BNSP_SMK.jpg, sertifikat/bnsp_Sosmed.jpeg
-- sertifikat/fls2n-smk-2022.jpg, sertifikat/fls2n-smp-duet-gitar.jpg (path bisa diubah di `src/data/highlights.js`)
-- sertifikat/pengalaman-kerja-pengarsipan.jpg
-
-Selama file belum ada, situs menampilkan kotak placeholder.
+├── app/
+│   ├── layout.jsx        # Root layout, metadata, font, dan provider tema
+│   ├── page.jsx          # Titik perakitan utama seluruh section portofolio
+│   └── globals.css       # Konfigurasi Tailwind CSS dan custom keyframes animation
+├── data/                 # Pusat basis data statis (mudah disesuaikan)
+│   ├── profile.js        # Informasi identitas, bio, dan tone foto
+│   ├── navigation.js     # Navigasi utama
+│   ├── credentials.js    # Sertifikasi & penghargaan nasional
+│   ├── stack.js          # Daftar keahlian teknologi
+│   ├── projects.js       # Showcase proyek coding & UI/UX
+│   ├── highlights.js     # Pencapaian & sorotan karier
+│   └── socials.js        # Tautan media sosial
+├── sections/             # Blok modular halaman (Hero, Education, TechStack, Projects, dll)
+├── components/
+│   ├── TShape.jsx        # Komponen potret interaktif dengan bingkai artistik
+│   ├── layout/           # Floating navigation & Footer
+│   └── ui/               # Koleksi komponen atomik (Glow, Reveal, Typewriter, Lightbox, dll)
+└── lib/
+    └── theme.js          # Utilitas manajemen tema terang/gelap
